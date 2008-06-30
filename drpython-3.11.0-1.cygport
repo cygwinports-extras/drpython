@@ -1,0 +1,23 @@
+inherit distutils
+
+DESCRIPTION="Customizable and extensible IDE for Python"
+HOMEPAGE="http://drpython.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
+PATCH_URI="
+	mirror://portage/dev-python/${PN}/files/${PN}-165-wxversion.patch
+	mirror://portage/dev-python/${PN}/files/${PN}-165-tabswitch.patch
+"
+SRC_DIR=${PN}
+
+src_install() {
+	cd ${B}
+	distutils_install
+
+	echo -e "#!/bin/sh\npython ${PYTHON_SITELIB}/${PN}/${PN}.py" > drpython
+	dobin drpython
+
+	cp -R ${S}/bitmaps ${D}${PYTHON_SITELIB}/${PN}/
+
+	# for Windows only
+	rm -f ${D}/usr/bin/postinst.py
+}
