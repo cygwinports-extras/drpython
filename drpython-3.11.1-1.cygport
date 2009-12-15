@@ -7,7 +7,7 @@ PATCH_URI="
 	mirror://portage/dev-python/${PN}/files/${PN}-165-wxversion.patch
 	mirror://portage/dev-python/${PN}/files/${PN}-165-tabswitch.patch
 "
-SRC_DIR=${PN}
+SRC_DIR="${PN}_${PV}"
 
 src_install() {
 	cd ${B}
@@ -20,4 +20,6 @@ src_install() {
 
 	# for Windows only
 	rm -f ${D}/usr/bin/postinst.py
+
+	dodoc *.txt
 }
