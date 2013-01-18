@@ -1,6 +1,0 @@
-category: Devel Python
-requires: python python-wx2.8
-sdesc: "Customizable and extensible IDE for Python"
-ldesc: "DrPython is a highly customizable, extensible editor/environment 
-for developing programs written in the Python programming Language.  It 
-is implemented in wxPython."

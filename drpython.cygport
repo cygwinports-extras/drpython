@@ -1,13 +1,20 @@
 inherit distutils
 
-DESCRIPTION="Customizable and extensible IDE for Python"
+NAME="drpython"
+VERSION=3.11.3
+RELEASE=1
+CATEGORY="Devel Python"
+SUMMARY="Customizable and extensible IDE for Python"
+DESCRIPTION="DrPython is a highly customizable, extensible editor/environment
+for developing programs written in the Python programming Language.  It is
+implemented in wxPython."
 HOMEPAGE="http://drpython.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
+SRC_URI="mirror://sourceforge/${PN}/DrPython_${VERSION}.zip"
+SRC_DIR="DrPython"
 PATCH_URI="
 	mirror://portage/dev-python/${PN}/files/${PN}-165-wxversion.patch
 	mirror://portage/dev-python/${PN}/files/${PN}-165-tabswitch.patch
 "
-SRC_DIR="${PN}_${PV}"
 
 src_install() {
 	cd ${B}
